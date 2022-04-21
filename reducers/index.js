@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import * as actions from '../actions/action-types';
+import { ADD_ACTIVITY } from '../actions/action-types';
 
 // const reducer = combineReducers({});
 
@@ -17,7 +17,12 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch(action.type) {
-    case actions.GET_RANDOM_ACTIVITY:
+    // case GET_RANDOM_ACTIVITY:
+    //   return {
+    //     ...state,
+    //     activities: [...state.activities, action.payload]
+    //   }
+    case ADD_ACTIVITY:
       return {
         ...state,
         activities: [...state.activities, action.payload]

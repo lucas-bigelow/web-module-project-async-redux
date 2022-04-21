@@ -7,15 +7,20 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 
 import ActivityList from './ActivityList';
 import reducer from '../../reducers';
+import RandomButton from './RandomButton';
 
 function App() {
   const composedEnhancer = composeWithDevTools(applyMiddleware(thunkMiddleware))
   const store = createStore(reducer, composedEnhancer);
 
+  
+
   return (
     <Provider store={store}>
-      <ActivityList />
-      <button type="button">Get a new random activity!</button>
+      <div className="main">
+        <ActivityList />
+        <RandomButton />
+      </div>
     </Provider>
   );
 }
